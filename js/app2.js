@@ -1,7 +1,7 @@
 // var allStoresArr = [pikePlaceArr, seaTac, souCen, bellSquare, alki];
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var storeArray = [];
-
+//Constructor to create new store objects
 function store(storeName, minCust, maxCust, avgCookiesPerCustomer){
   this.storeName = storeName;
   this.hrsOpen = 14;
@@ -24,50 +24,37 @@ function store(storeName, minCust, maxCust, avgCookiesPerCustomer){
   this.getCustomers();
 }
 
-function createRow(store) {
+function createRow() {
   var timeLocation = document.getElementById('timeLocationEl');
-  var tr = document.createElement('tr');
-  tr.textContent = store.storeName;
-  timeLocation.appendChild(tr);
   var th = document.createElement('th');
-  th.textContent = 'Time';
-  timeLocation.appendChild(th);
-  var th2 = document.createElement('th');
-  th2.textContent = 'Customers';
-  timeLocation.appendChild(th2);
-  var th3 = document.createElement('th');
-  th3.textContent = 'Cookies';
-  timeLocation.appendChild(th3);
-  for (var i = 0; i < 15; i++) {
-    var tr = document.createElement('tr');
-    tr.textContent = hours[i];
-    timeLocation.appendChild(tr);
-    var td1 = document.createElement('td');
-    td1.textContent = store.generatedCustomers[i];
-    tr.appendChild(td1);
-    var td2 = document.createElement('td');
-    td2.textContent = store.cookiesPerHour[i];
-    tr.appendChild(td2);
-  }
   var tr = document.createElement('tr');
-  tr.textContent = 'Total';
-  timeLocation.appendChild(tr);
-  var td1 = document.createElement('td');
-  td1.textContent = store.totalCustomers;
-  tr.appendChild(td1);
-  var td2 = document.createElement('td');
-  td2.textContent = store.totalDailySales;
-  tr.appendChild(td2);
+  var td = document.createElement('td');
+  for (var i = 0; i < 15; i++) {
+//Puts in the hours in column headers
+    th.textContent = hours[i];
+    timeLocation.appendChild(th);
+//   // puts in store name to column 1
+//     tr.textContent = store.storeName;
+//     th.appendChild(tr);
+//   //Puts in customers column
+//     td.textContent = store.cookiesPerHour[i];
+//     tr.appendChild(td);
+  }
+//Puts in total column header
+  td.textContent = 'Total';
+  timeLocation.appendChild(td);
+//Total cookies column 3
+  td.textContent = store.totalDailySales;
+  tr.appendChild(td);
 }
-
+//Constructing each store object
 storeArray.push(new store('Pike Place', 17, 88, 5.2));
 storeArray.push(new store('SeaTac Airport', 6, 24, 1.2));
 storeArray.push(new store('Southcenter', 11, 38, 1.9));
 storeArray.push(new store('Bellevue Square', 20, 48, 3.3));
 storeArray.push(new store('Alki', 3, 24, 2.6));
-// function createTable(store) {
-// }
 
+//Finds the location in the html
 var formLocation = document.getElementById('form-location');
 
 function createTable(event) {
@@ -77,18 +64,22 @@ function createTable(event) {
   } else if (isNaN(event.target.min.value) || isNaN(event.target.max.value) || isNaN(event.target.avg.value)) {
     return alert('Must be a number!');
   }
+
+//Stores the form data into variables
   var newStore = event.target.store.value;
   var min = parseInt(event.target.min.value);
   var max = parseInt(event.target.max.value);
   var avg = parseInt(event.target.avg.value);
-
+//Constructs a new store and stores that in a new variable
   var formStore = new store(newStore,min,max,avg);
+//Pushes the constructed store into the storeArray
   storeArray.push(formStore);
-  for (var i = 0; i < storeArray.length; i++) {
+//Prints the whole table
+  for (var i = 0; i < 15; i++) {
     createRow(storeArray[i]);
   }
-
+//Clears the first print so that it won't duplicate on more submissions
   storeArray = [];
 }
-
+//Event Listener to construct table upon submission of form
 formLocation.addEventListener('submit',createTable);
