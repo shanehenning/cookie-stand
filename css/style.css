@@ -191,5 +191,9 @@ margin-bottom: 210px;
 }
 
 #contact-section{
-  height: 320px;
+  height: 355px;
+}
+
+#contact-fish{
+position: relative;
 }
