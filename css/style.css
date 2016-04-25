@@ -1,55 +1,199 @@
 body{
-  background-color: #1e201c;
+  background-color: #171c13;
+  margin: 0px;
+  padding: 0px;
 }
+
+#background{
+  background-image:url("/users/shanehenning/cf/cookie-stand/img/background.jpg");
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 1200px;
+  height:800px;
+  margin-left: 50%;
+  margin-right: 50%;
+  top:0px;
+  left:-600px;
+  right:-600px;
+}
+
+#cover{
+  background-image:url("/users/shanehenning/cf/cookie-stand/img/background.jpg");
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 1200px;
+  height:135px;
+  margin-left: 50%;
+  margin-right: 50%;
+  top:0px;
+  left:-600px;
+  right:-600px;
+  z-index: 4;
+}
+
+#wrapper{
+  margin-top: 0;
+  width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
   font-family: 'Purple Purse';
-  color: #1e2418;
+  color: #171c13;
+  text-shadow: 2px 2px #a67d64;
   display: inline;
   vertical-align:middle;
-  font-size: 32pt;
+  font-size: 28pt;
   position: relative;
   vertical-align:top;
-  top:19px;
-  left: 50px;
+  top:12px;
+  left: 35px;
 }
 
 h2 {
-  font-family: Helvetica;
+  font-size: 18pt;
   color: #d09975;
 }
 
+h2 a{
+  font-family: inherit;
+  padding: inherit;
+  font-style: italic;
+}
+
 h3{
-  font-family: Helvetica;
-  font-size: 12pt;
+  font-size: 14pt;
   color: #d09975;
 }
 
 p {
   color: #e2c499;
-  font-family: georgia;
   font-size: 11pt;
+  clear: both;
 }
 
 #logo {
-  width: 250px;
-  position: relative;
-  left: 25px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 175px;
+  left:10px;
 }
 
 header{
-  margin-left: auto;
-  margin-right: auto;
-  width:850px;
-  background-color: #e2c499;
+  margin-top: 15px;
+  padding:15px;
+  background-image:url("/users/shanehenning/cf/cookie-stand/img/wood_planks.jpg");
+  box-shadow: 1px 1px 4px #343434;
+  border-style: outset;
+  border-width:2px;
+  border-color: #272f1f;
+  opacity: 0.9;
+  border-radius: 3px;
+  width: 650px;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+}
+
+#nav{
+  width: 850px;
+  height: 45px;
+  z-index: 10;
+  position: fixed;
+  margin-left: 50%;
+  margin-right: 50%;
+  left: -240px;
+  top:129px;
+  color: #d09975;
+}
+
+a{
+  font-size: 24px;
+  font-family: 'Purple Purse';
+  text-shadow: 1px 1px #343434;
+  color: #d09975;
+  list-style-type: none;
+  text-decoration: none;
+  display: inline;
+  padding: 25px;
+}
+
+a:hover{
+  color: #dcb59c;
+}
+
+a:active{
+  color: #d7a380;
+}
+
+#flag{
+  background-image:url("/users/shanehenning/cf/cookie-stand/img/flag.png");
+  background-repeat: no-repeat;
+  width: 995px;
+  height: 72px;
+  position: fixed;
+  z-index: 4;
+  top: 130px;
+  margin-left: 50%;
+  margin-right: 50%;
+  left: -406px;
+  right:-450px;
 }
 
 section{
-  background-color: #273230;
+  top:155px;
+  position: relative;
+  background-color: #272f1f;
+  opacity: 0.9;
   margin-top: 25px;
   padding: 15px;
-  width: 820px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 650px;
+  border-radius: 5px;
+  border-style: outset;
+  border-width:1.5px;
+  border-color: #171c13;
+  box-shadow: 1px 1px 4px #343434;
+}
+
+#merch {
+  position: relative;
+  left: 11%;
+}
+
+#merch2{
+  position: relative;
+  left: 10%;
+}
+
+#merch img{
+  box-shadow: 2px 2px 1px #343434;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#merch2 img{
+  box-shadow: 2px 2px 1px #343434;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#bottom{
+clear: both;
+position: relative;
+top: 15px;
+}
+
+.image-clear{
+position: relative;
+left: 7%;
+margin-bottom: 210px;
+}
+
+#contact-section{
+  height: 355px;
+}
+
+#contact-fish{
+position: relative;
 }
